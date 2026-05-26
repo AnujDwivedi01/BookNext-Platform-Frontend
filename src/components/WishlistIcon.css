@@ -1,0 +1,40 @@
+/* ─── Wishlist Icon (Navbar) ─────────────────────────────────────────────── */
+
+.wishlist-icon-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.3rem;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.wishlist-icon-link:hover {
+  background: rgba(44, 62, 122, 0.08);
+}
+
+.wishlist-icon-emoji {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.wishlist-icon-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 17px;
+  height: 17px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  line-height: 1;
+  border: 2px solid #fff;
+}

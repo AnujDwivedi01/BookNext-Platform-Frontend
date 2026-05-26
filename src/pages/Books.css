@@ -1,0 +1,142 @@
+.books-page {
+  padding: var(--gap-xl) 0 var(--gap-2xl);
+  min-height: 100vh;
+}
+
+.books-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--gap-xl);
+  gap: var(--gap-md);
+  flex-wrap: wrap;
+}
+
+.books-header h1 { font-size: 36px; }
+
+/* Toolbar */
+.books-toolbar {
+  display: flex;
+  gap: var(--gap-md);
+  margin-bottom: var(--gap-md);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px 10px 38px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: var(--font-body);
+  transition: border-color var(--transition);
+}
+
+.search-input:focus {
+  border-color: var(--accent-dim);
+  outline: none;
+}
+
+.search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+.filters {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.filter-select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: border-color var(--transition);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--accent-dim);
+}
+
+/* Category pills */
+.category-pills {
+  display: flex;
+  gap: var(--gap-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--gap-xl);
+}
+
+.pill {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 13px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.pill:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent-light);
+}
+
+.pill-active {
+  background: var(--accent-subtle);
+  border-color: var(--accent-light);
+  color: var(--accent-light);
+  font-weight: 500;
+}
+
+/* Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--gap-lg);
+}
+
+@media (max-width: 600px) {
+  .books-toolbar { flex-direction: column; }
+  .filters { width: 100%; }
+  .filter-select { flex: 1; }
+  .books-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: var(--gap-md); }
+}

@@ -1,0 +1,175 @@
+.book-detail-page {
+  padding: var(--gap-xl) 0 var(--gap-2xl);
+  min-height: 100vh;
+}
+
+.breadcrumb {
+  margin-bottom: var(--gap-xl);
+}
+
+.breadcrumb a {
+  font-size: 14px;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition);
+}
+
+.breadcrumb a:hover { color: var(--accent-light); }
+
+.book-detail-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--gap-2xl);
+  align-items: start;
+}
+
+/* Cover */
+.detail-cover {
+  position: relative;
+  height: 420px;
+  background: linear-gradient(135deg, var(--bg-card), #1e1e1e);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.detail-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.04), transparent 70%);
+}
+
+.detail-spine {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 8px;
+  opacity: 0.9;
+}
+
+.detail-initial {
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--accent, var(--accent-light));
+  opacity: 0.12;
+  line-height: 1;
+  user-select: none;
+}
+
+.detail-category {
+  position: absolute;
+  bottom: 20px;
+  right: 16px;
+  background: rgba(0,0,0,0.65);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent, var(--accent-light));
+}
+
+/* Info */
+.detail-info { padding-top: var(--gap-sm); }
+
+.detail-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: var(--gap-sm);
+  letter-spacing: -1px;
+}
+
+.detail-author {
+  font-size: 17px;
+  color: var(--text-dim);
+  margin-bottom: var(--gap-sm);
+}
+
+.detail-author em { font-style: italic; color: var(--accent-light); }
+
+.detail-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-lg);
+  margin: var(--gap-lg) 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.stat-value {
+  font-size: 20px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.detail-actions {
+  display: flex;
+  gap: var(--gap-md);
+  flex-wrap: wrap;
+  margin-top: var(--gap-lg);
+}
+
+@media (max-width: 768px) {
+  .book-detail-layout {
+    grid-template-columns: 1fr;
+  }
+  .detail-cover { height: 260px; }
+  .detail-title { font-size: 28px; }
+  .detail-stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Wishlist button (add to existing BookDetail.css) ───────────────────── */
+
+.btn-wishlist {
+  background: transparent;
+  border: 1.5px solid #c9a84c;
+  color: #c9a84c;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-wishlist:hover:not(:disabled) {
+  background: #c9a84c;
+  color: #fff;
+}
+
+.btn-wishlist.in-wishlist {
+  background: #fff3cd;
+  border-color: #c9a84c;
+  color: #7a5c00;
+}
+
+.btn-wishlist.in-wishlist:hover:not(:disabled) {
+  background: #fee;
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.btn-wishlist:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
